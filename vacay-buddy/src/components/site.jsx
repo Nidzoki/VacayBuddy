@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import '../css/BuddyReservation.css';
+import logo from '../../public/images/logo.png';
 
 
 const BuddyReservation = () => {
@@ -85,12 +86,13 @@ const BuddyReservation = () => {
 
   return (
     <div className="reservation-container">
-      <h1>Rezervirajte svog turističkog buddyja</h1>
-      <p>Naši lokalni vodiči će vam pomoći da se snađete u gradu i otkrijete najbolje lokale!</p>
+        {/* <img src={logo} alt="logo" /> */}
+      <h1 id="logo" >vacayBuddy</h1>
+      <p>Our local buddies will help you discover culture of our city!</p>
       
-      <form onSubmit={handleSubmit}>
+      <form className='form' onSubmit={handleSubmit}>
         <div className="form-group">
-          <label>Ime i prezime:</label>
+          <label>Name and surname:</label>
           <input 
             type="text" 
             name="name" 
@@ -112,7 +114,7 @@ const BuddyReservation = () => {
         </div>
         
         <div className="form-group">
-          <label>Telefon:</label>
+          <label>Telephone:</label>
           <input 
             type="tel" 
             name="phone" 
@@ -124,7 +126,7 @@ const BuddyReservation = () => {
         
         <div className="form-row">
           <div className="form-group">
-            <label>Datum:</label>
+            <label>Date:</label>
             <input 
               type="date" 
               name="date" 
@@ -133,9 +135,8 @@ const BuddyReservation = () => {
               required 
             />
           </div>
-          
           <div className="form-group">
-            <label>Vrijeme:</label>
+            <label>Time:</label>
             <input 
               type="time" 
               name="time" 
@@ -147,7 +148,7 @@ const BuddyReservation = () => {
         </div>
         
         <div className="form-group">
-          <label>Trajanje (sati):</label>
+          <label>Duration (sati):</label>
           <select 
             name="duration" 
             value={formData.duration} 
@@ -161,38 +162,38 @@ const BuddyReservation = () => {
           </select>
         </div>
         
-        <div className="form-group">
-          <label>Preferirani jezik:</label>
+        {/* <div className="form-group">
+          <label>Preferred language:</label>
           <select 
             name="language" 
             value={formData.language} 
             onChange={handleChange}
           >
-            <option value="en">Engleski</option>
-            <option value="de">Njemački</option>
-            <option value="fr">Francuski</option>
-            <option value="es">Španjolski</option>
-            <option value="it">Talijanski</option>
+            <option value="en">English</option>
+            <option value="de">German</option>
+            <option value="fr">French</option>
+            <option value="es">Spanish</option>
+            <option value="it">Italian</option>
           </select>
-        </div>
+        </div> */}
         
         <div className="form-group">
-          <label>Mjesto okupljanja:</label>
+          <label>Meeting place:</label>
           <select 
             name="meetupLocation" 
             value={formData.meetupLocation} 
             onChange={handleChange}
           >
-            <option value="city-center">Gradski centar</option>
-            <option value="train-station">Željeznički kolodvor</option>
-            <option value="bus-station">Autobusni kolodvor</option>
-            <option value="airport">Zračna luka</option>
-            <option value="hotel">Moj hotel</option>
+            <option value="city-center">City center</option>
+            <option value="train-station">Train station</option>
+            <option value="bus-station">Bus station</option>
+            <option value="airport">Airport</option>
+            <option value="hotel">My hotel</option>
           </select>
         </div>
         
         <div className="form-group">
-          <label>Posebni zahtjevi (opcionalno):</label>
+          <label>Special requests (optional):</label>
           <textarea 
             name="specialRequests" 
             value={formData.specialRequests} 
@@ -202,7 +203,7 @@ const BuddyReservation = () => {
         </div>
         
         <button type="submit" disabled={searching}>
-          {searching ? 'Tražim dostupne buddyje...' : 'Pronađi buddyja'}
+          {searching ? 'Looking for buddy...' : 'Find buddy'}
         </button>
       </form>
     </div>
