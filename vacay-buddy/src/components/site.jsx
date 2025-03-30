@@ -1,7 +1,5 @@
 import React, { useState } from 'react';
 import '../css/BuddyReservation.css';
-import logo from '../../public/images/logo.png';
-
 
 const BuddyReservation = () => {
   const [formData, setFormData] = useState({
@@ -86,10 +84,8 @@ const BuddyReservation = () => {
 
   return (
     <div className="reservation-container">
-        {/* <img src={logo} alt="logo" /> */}
-      <h1 id="logo" >vacayBuddy</h1>
+        <h1 id="logo" >vacayBuddy</h1>
       <p>Our local buddies will help you discover culture of our city!</p>
-      
       <form className='form' onSubmit={handleSubmit}>
         <div className="form-group">
           <label>Name and surname:</label>
@@ -154,29 +150,14 @@ const BuddyReservation = () => {
             value={formData.duration} 
             onChange={handleChange}
           >
-            <option value="1">1 sat</option>
-            <option value="2">2 sata</option>
-            <option value="3">3 sata</option>
-            <option value="4">4 sata</option>
-            <option value="5">Cijeli dan (5+ sati)</option>
+            <option value="1">1 hour</option>
+            <option value="2">2 hours</option>
+            <option value="3">3 hours</option>
+            <option value="4">4 hours</option>
+            <option value="5">Whole day (5+ hours)</option>
           </select>
         </div>
-        
-        {/* <div className="form-group">
-          <label>Preferred language:</label>
-          <select 
-            name="language" 
-            value={formData.language} 
-            onChange={handleChange}
-          >
-            <option value="en">English</option>
-            <option value="de">German</option>
-            <option value="fr">French</option>
-            <option value="es">Spanish</option>
-            <option value="it">Italian</option>
-          </select>
-        </div> */}
-        
+              
         <div className="form-group">
           <label>Meeting place:</label>
           <select 

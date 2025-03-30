@@ -1,4 +1,4 @@
-import BuddyReservation from './components/site'
+import BuddyReservation from './components/Site.jsx'
 import './App.css'
 
 function App() {
